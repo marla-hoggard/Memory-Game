@@ -1,0 +1,121 @@
+body {
+	background-color: #263F54;
+	width: 100%;
+	background-image: url('https://images.unsplash.com/photo-1460602594182-8568137446ce?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c6a89cf0d31c8ed23b35aaf9a119a9f5&w=2000');
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Bungee|Bungee+Inline|Bungee+Shade');
+
+/*Play Memory*/
+.title {
+	font-family: 'Bungee Shade', cursive;
+	font-size: 40pt;
+	text-align: center;
+	color: yellow;
+	margin-bottom: 15px;
+}
+
+/*Turns Remaining & Reset Game button*/
+.belowGame {
+	text-align: center;
+	color: yellow;
+	font-family: Bungee;
+	font-size: 18pt;
+	margin-top: 10px;
+}
+
+.belowGame button {
+	margin: 10px;
+	padding: 5px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid black;
+	background-color: #dfdbe5;
+	outline: none;
+}
+
+.belowGame button:hover {
+	background-color: #ef5350;
+}
+
+/*Winner and Game Over banners*/
+.banner {
+	position: relative;
+	text-align: center;
+	top: -380px;
+	font-family: 'Bungee Inline', cursive;
+	transition: font-size 1s;
+}
+.winner {
+	color: green;
+	text-shadow: 5px 5px black;
+	font-size: 60pt;
+}
+
+.loser {
+	color: red;
+	text-shadow: 5px 5px white;
+	font-size: 60pt;
+}
+
+.hiddenBanner {
+	font-size: 0pt;
+
+}
+
+/*CARDS*/
+.cards {
+	display: grid;
+	grid-template-columns: repeat(6,105px);
+	grid-gap: 5px;
+	justify-content: center;
+}
+
+.card {
+	width: 100px;
+	height: 150px;
+	border: 1px solid black;
+	border-radius: 10px;
+  	transform-style: preserve-3d;
+  	transition: transform 1s;
+}
+
+.card figure {
+	margin: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+}
+
+.card .front {
+	background: white;
+  	transform: rotateY( 180deg );
+	text-align: center;
+}
+
+.card .back {
+	background-color: #ef5350;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23dfdbe5' fill-opacity='0.4'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.card.flipped {
+  transform: rotateY( -180deg );
+}
+
+/*Card image*/
+svg {
+	width: 72px;
+	height: 72px;
+	transform: translate(0,36);
+}
+
+/*Swap to three across on small screen*/
+@media (max-width: 600px) {
+	.cards {
+		grid-template-columns: repeat(3,105px);
+	}
+} 
+
