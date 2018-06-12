@@ -30,7 +30,7 @@ export default class App extends React.Component {
 	componentDidUpdate() {
 		//Two unmatched cards up, need to be flipped back over
 		if (this.state.cardsUp === 2) {
-			let {boardStatus, firstTurned, secondTurned, playStatus} = this.state;
+			let {boardStatus, firstTurned, secondTurned} = this.state;
 			boardStatus[firstTurned] = 0;
 			boardStatus[secondTurned] = 0;
 
@@ -54,7 +54,7 @@ export default class App extends React.Component {
 		let {boardLayout, boardStatus, cardsUp, firstTurned, secondTurned, turnsLeft, playStatus} = this.state;
 
 		//Only works if during game and card was face down
-		if (playStatus == 'game' && boardStatus[i] === 0) {
+		if (playStatus === 'game' && boardStatus[i] === 0) {
 			boardStatus[i] = 1; //Show card
 			
 			//First card chosen
