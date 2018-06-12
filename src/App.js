@@ -85,7 +85,7 @@ export default class App extends React.Component {
 					turnsLeft--;
 
 					//Out of turns - game over
-					if (turnsLeft === 0) {
+					if (turnsLeft <= 0) {
 						console.log("Game Over");
 						playStatus = 'loser';
 					}
@@ -137,7 +137,7 @@ export default class App extends React.Component {
 			cardsUp: 0,
 			firstTurned: null,
 			secondTurned: null,
-			turnsLeft: 15,
+			turnsLeft: 20,
 			playStatus: 'game',
 		});
 
